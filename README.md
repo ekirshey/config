@@ -1,3 +1,3 @@
-# nixconfig
+# config
 
-This is a place for me to put my various vim and bash configuration files.
+This is a place for me to put my various configuration files.
