@@ -1,0 +1,23 @@
+Import-Module posh-git
+
+Set-PSReadLineOption -PredictionSource None
+
+Set-Alias touch ni
+
+function cb {
+    cargo build
+}
+
+function Edit-Profile {
+    code "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+}
+
+function Reload-Profile {
+    & $profile
+}
+
+#https://github.com/dahlbyk/posh-git#customizing-the-posh-git-prompt
+$GitPromptSettings.DefaultPromptWriteStatusFirst = $true
+$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
+$GitPromptSettings.DefaultPromptPath.ForeGroundColor = [ConsoleColor]::Green
+$GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n'
